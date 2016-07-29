@@ -1,42 +1,78 @@
-$(document).ready(function() {
-	var characters = new Array(4);
-	characters[0] = new character ('chewbacca', 'chewbacca.tif', 140, 20, 30);
-	characters[1] = new character ('jarjarbinks', 'jarjarbinks.tif', 100, 18, 31);
-	characters[2] = new character ('c3po', 'c3po.tif', 120, 15, 28);
-	characters[3] = new character ('jabbathehutt', 'jabbathehutt.tif', 135, 19, 33);
+var wins=0;
+var losses=0;
 
-	var attackpoints = [140, 100, 120, 135];
+// variables
+var crystalValue1= Math.floor((Math.random() * 20) + 1); 
+var	crystalValue2= Math.floor((Math.random() * 20) + 1);
+var	crystalValue3= Math.floor((Math.random() * 20) + 1);
+var	crystalValue4= Math.floor((Math.random() * 20) + 1);
 
 
+// scoreboard variables
+var playerScore = 0;
+var Score = 0;
 
-function	character (name, image, health, attack, counter) {
-		this.name = name;
-		this.image = image;
-		this.health = health;
-		this.attack = attack;
-		this.counter = counter;
-		this.status = 'available';
+// start game
+
+startGame();
+
+function startGame () {
+ 	Score= Math.floor((Math.random() * 100) + 1);
+	crystalValue1= Math.floor((Math.random() * 20) + 1); 
+	crystalValue3= Math.floor((Math.random() * 20) + 1);
+	crystalValue4= Math.floor((Math.random() * 20) + 1);
+
+	document.getElementById("Score").innerHTML = Score;
+	document.getElementById("playerScore").innerHTML = playerScore;
+
+
+}; 
+
+function checkGame() {
+	if (playerScore==Score){
+		wins++;
+		document.getElementById("wins").innerHTML = wins;
+		startGame();
+	}else if(playerScore>Score){
+		losses++
+		document.getElementById("losses").innerHTML = losses;
+		startGame();
 	}
-
-//functions for game
-
-	function fighterslist() {
-
-	}
+}; 
 
 
-	function fight() {
 
-	}
 
-	function Enemies defeated() {
 
-	}
+//click functions
+$('#crystalorange').click(function(){
+	.document.writer(crystalValue1);
+	playerScore=playerScore+crystalValue1;
+	document.getElementById("playerScore").innerHTML = playerScore;
+	checkGame();
+	
+});
+$('#crystalgreen').click(function(){
+document.writer(crystalValue2);
+	playerScore=playerScore+crystalValue2;
+	document.getElementById("playerScore").innerHTML = playerScore;
+	checkGame();
 
-	function gameOver() {
-		
-	}
-	function playerWins() {
-		
 
 });
+$('#crystalred').click(function(){
+	document.writer(crystalValue3);
+	playerScore=playerScore+crystalValue3;
+	document.getElementById("playerScore").innerHTML = playerScore;
+	checkGame();
+
+		
+});
+$('#crystalblue').click(function(){
+	document.writer(crystalValue4);
+	playerScore=playerScore+crystalValue4;
+	document.getElementById("playerScore").innerHTML = playerScore;
+	checkGame();
+});
+
+
