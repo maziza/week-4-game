@@ -22,8 +22,8 @@ function startGame () {
 	crystalValue3= Math.floor((Math.random() * 20) + 1);
 	crystalValue4= Math.floor((Math.random() * 20) + 1);
 
-	document.getElementById("Score").innerHTML = Score;
-	document.getElementById("playerScore").innerHTML = playerScore;
+	document.getElementById("Score").innerHTML;
+	document.getElementById("playerScore").innerHTML;
 
 
 }; 
@@ -46,7 +46,7 @@ function checkGame() {
 
 //click functions
 $('#crystalorange').click(function(){
-	.document.writer(crystalValue1);
+	document.writer(crystalValue1);
 	playerScore=playerScore+crystalValue1;
 	document.getElementById("playerScore").innerHTML = playerScore;
 	checkGame();
